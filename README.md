@@ -5,7 +5,7 @@
 Do you need have installed in your desktop: 
 1. [Node.JS](https://nodejs.org/en) perferably the latest version
 
-# Now us are ready for begin!
+# Now we are ready for begin!
 
 Step by step how to install TypeScript for transpile or run("interpret") your code
 
