@@ -1,15 +1,15 @@
-Before begin...
+# Before begin...
 
-Everything you need know about TypeScript
+## Everything you need know about TypeScript
 
-Do you need have installed in your desktop:
-Node.JS, perferably the latest version (https://nodejs.org/en)
+Do you need have installed in your desktop: 
+1. [Node.JS](https://nodejs.org/en) perferably the latest version
 
-Now us are ready for begin!
+# Now us are ready for begin!
 
 Step by step how to install TypeScript for transpile or run("interpret") your code
 
-CMD:
+## CMD:
 
 "npm init -y" -> This command generates a "package.json"
 
@@ -29,7 +29,7 @@ After transpiling
 
 "node "fileName" "-> To run .js file
 
-PowerShell:
+## PowerShell:
 
 "npm init -y" -> This command generates a "package.json"
 
