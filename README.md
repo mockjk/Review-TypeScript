@@ -25,6 +25,10 @@ For transpiling
 
 "tsc" -> Transpiles your .ts files, generating your JavaScript files and their respective maps
 
+After transpiling
+
+"node "fileName" "-> To run .js file
+
 PowerShell:
 
 "npm init -y" -> This command generates a "package.json"
@@ -40,3 +44,8 @@ by good manners, it's good generate a "tsconfig.json", this file can be setup to
 For transpiling
 
 "tsc.cmd" -> Transpiles your .ts files, generating your JavaScript files and their respective maps
+
+After transpiling
+
+"node "fileName" "-> To run .js file
+
