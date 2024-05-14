@@ -41,7 +41,7 @@ function screening(patient: Paciente){ //This function define attribute "priorid
     return patient;
 };
 
-const clinic: Ala[] = [
+const medicalWard: Ala[] = [
     {
       nome: "triagem",
       fila: pacientes,
@@ -60,27 +60,42 @@ const clinic: Ala[] = [
     },
   ];
 
-function doScreening(patitens: Paciente[]){//This function perfoms screening
-    
-    for(let i = 0; i < patitens.length; i++){//For Loop walks through the entire screening
-        const patientWithScreening = screening(patitens[i]); //Patient goes through screening and receive a priority
-    
-        //Insert in queue from sector
-        if(patientWithScreening.setor === "Cardiologista"){
-            insert(patientWithScreening, clinic[1].fila); //Put
-            remove(patitens); //Remove from screening
-            return;
-        };
-        if(patientWithScreening.setor === "Clínico Geral"){
-            insert(patientWithScreening, clinic[2].fila);
-            remove(patitens);
-            return;
-        };
-        if(patientWithScreening.setor === "Ortopedista"){
-            insert(patientWithScreening, clinic[3].fila);
-            remove(patitens);
-            return;
-        };
+
+function doScreening(patitens: Paciente[]){ //This function do the screening
+  
+  patitens.forEach(patient => { //Moving all the patients into to screening
+    screening(patient);
+  });
+
+  while(patitens[0] != undefined || patitens[0] != null){
+    switch(patitens[0].setor){
+      case "Cardiologista":
+        insert(patitens[0], medicalWard[1].fila);
+        remove(pacientes);
+      break;
+      case "Clínico Geral":
+        insert(patitens[0], medicalWard[2].fila);
+        remove(pacientes);
+      break;
+      case "Ortopedista":
+        insert(patitens[0], medicalWard[3].fila);
+        remove(pacientes);
+      break;
     };
-    
-}
+  };
+};
+
+const clinic:Consultorio = {
+  nome: "solveEverything",
+  alas: medicalWard
+};
+
+function setDiagnostic(patient: Paciente){ //This function define attribute "diagnostico" from interface "Paciente"
+  const diagnostics = [ "Gripe" , "Infecção" , "Morrendo" , "Virose" ];
+  const diagnostic = diagnostics[Math.floor(Math.random() * diagnostics.length)]; //"diagnostic" selects one value of "diagnostics"
+  patient.diagnostico = (<Paciente["diagnostico"]> diagnostic);
+  return patient;
+};
+
+
+console.log(doScreening(pacientes), medicalWard)

@@ -27,7 +27,7 @@ For transpiling
 
 After transpiling
 
-"node "fileName" "-> To run .js file
+"node "fileName.js" "-> To run .js file
 
 ## PowerShell:
 
@@ -47,5 +47,5 @@ For transpiling
 
 After transpiling
 
-"node "fileName" "-> To run .js file
+"node "fileName.js" "-> To run .js file
 

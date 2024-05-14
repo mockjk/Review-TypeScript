@@ -21,9 +21,11 @@ export function remove(queue: Array<any>){ //Function to remove the first item f
     if(queue[0] !== undefined){
         const removedItem = queue[0]; //Stores the removed item/first item from queue
 
-        for(let i = 0; i < queue.length; i++){
+        for(let i = 0; i < queue.length - 1; i++){
             queue[i] = queue[i + 1];
         };
+
+        queue[queue.length - 1] = undefined;
 
         return{
             removedItem: removedItem
@@ -31,4 +33,5 @@ export function remove(queue: Array<any>){ //Function to remove the first item f
     };
 
     console.error("Error, the queue is empty!");
+    return;
 };
